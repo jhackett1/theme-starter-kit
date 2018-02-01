@@ -35,6 +35,13 @@ function smallwins_widgets_init() {
 }
 add_action('widgets_init', 'smallwins_widgets_init');
 
+// Remove some unnecessary markup from nav menus
+function smallwins_cleaner_nav_markup( $args = '' ) {
+    $args['container'] = false;
+    return $args;
+}
+add_filter( 'wp_nav_menu_args', 'smallwins_cleaner_nav_markup' );
+
 // Prettify excerpts
 function smallwins_excerpt_length( $length ) {
 	return 20;

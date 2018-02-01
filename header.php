@@ -15,11 +15,13 @@ Find out more at SMALLWINS.CO.UK or shoot an email to HELLO@SMALLWINS.CO.UK
 - Joshua
 
  -->
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+ <html <?php language_attributes(); ?>>
+ 	<head>
+ 		<meta charset="<?php bloginfo( 'charset' ); ?>">
     <title><?php wp_title('|', true, 'right'); echo bloginfo('name')?> | <?php echo bloginfo('description'); ?></title>
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>" />
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <?php get_template_part('social-meta'); ?>
     <?php wp_head(); ?>
   </head>

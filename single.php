@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
 <div class="side-body">
-  <main class="site-content">
+  <main class="site-content single">
     <?php
     // Start loop
     if (have_posts()):
       while(have_posts()): the_post(); ?>
 
-      <article class="post">
+      <article class="post post-single">
         <h1 class="post-title"><?php the_title(); ?></h1>
         <h5 class="post-date"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></h5>
         <?php the_content(); ?>
