@@ -1,19 +1,20 @@
+const path = require('path')
+const webpack = require('webpack')
+
 module.exports = {
+  entry: './js/index.js',
+  mode: 'production',
+  watch: true,
   output: {
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'js'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            ['latest', { modules: false }],
-          ],
-        },
-      },
-    ],
-  },
-};
+      { test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }
+    ]
+  }
+}
